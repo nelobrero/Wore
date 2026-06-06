@@ -12,10 +12,13 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 import cloudinary
+from dotenv import load_dotenv
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+load_dotenv()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
@@ -128,11 +131,13 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 # Cloudinary
+
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dwlaqhame',
-    'API_KEY': '848435285211312',
-    'API_SECRET': 'sGHJXM-8Jv4HXLUnyVP-QKgIeRY',
+    'CLOUD_NAME': os.getenv('CLOUD_NAME'),
+    'API_KEY': os.getenv('API_KEY'),
+    'API_SECRET': os.getenv('API_SECRET'),
 }
+
 
 cloudinary.config(
     cloud_name=CLOUDINARY_STORAGE['CLOUD_NAME'],
