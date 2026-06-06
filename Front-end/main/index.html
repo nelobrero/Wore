@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Closet</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<button onclick="window.location.href='../landing/Landing.html'">Back to Landing Page</button>
+  <div class="container">
+    <!-- Left Box -->
+    <div class="box-left">
+      <h2>Selected Outfit</h2>
+
+      <div class="outfit">
+
+        <!-- outer -->
+
+      <div id="selected-item-secondary">
+
+        <div class="selected-top-outer">
+          <!-- <button class="remove-btn" onclick="removeSelection('top')">Remove</button> -->
+        </div>
+      
+        <div class="row">
+
+        <div class="container-accessories">
+        </div>
+        
+        <div class="container-accessories"></div>
+        </div>
+
+         <div class="row">
+        <div class="container-accessories"></div>
+        <div class="container-accessories"></div>
+        </div>
+        <div class="selected-bag">
+          <!-- <button class="remove-btn" onclick="removeSelection('bottom')">Remove</button> -->
+        </div>
+      </div>
+
+<!-- inner/main -->
+
+       <div id="selected-item">
+
+        <div class="selected-top">
+          <!-- <button class="remove-btn" onclick="removeSelection('top')">Remove</button> -->
+        </div>
+
+        <div class="selected-belt">
+          <!-- <button class="remove-btn" onclick="removeSelection('belt')">Remove</button> -->
+        </div>
+
+
+        <div class="selected-bottom">
+          <!-- <button class="remove-btn" onclick="removeSelection('bottom')">Remove</button> -->
+        </div>
+
+        <div class="selected-shoes">
+          <!-- <button class="remove-btn" onclick="removeSelection('shoes')">Remove</button> -->
+        </div>
+
+        
+      </div>
+
+      
+
+      </div>
+
+    </div>
+
+    <!-- Right Box -->
+   <div class="box-right">
+
+      <!-- Upload Modal -->
+      <div id="upload-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:999;">
+        <div style="background:white; width:320px; margin:100px auto; padding:30px; border-radius:12px;">
+          <h3 style="margin-bottom:16px;">Add Clothing Item</h3>
+          <input type="text" id="upload-name" placeholder="Name (e.g. Blue Jeans)" style="width:100%; padding:8px; margin-bottom:10px; border:1px solid #ccc; border-radius:6px;"><br>
+          <select id="upload-category" style="width:100%; padding:8px; margin-bottom:10px; border:1px solid #ccc; border-radius:6px;">
+            <option value="tops">Tops</option>
+            <option value="pants">Pants</option>
+            <option value="shoes">Shoes</option>
+            <option value="bags">Bags</option>
+            <option value="accessories">Accessories</option>
+            <option value="belts">Belts</option>
+          </select><br>
+          <input type="file" id="upload-file" accept="image/*" style="margin-bottom:14px;"><br>
+          <div style="display:flex; gap:10px;">
+            <button onclick="uploadItem()" style="flex:1; padding:10px; background:#333; color:white; border:none; border-radius:6px; cursor:pointer;">Upload</button>
+            <button onclick="closeModal()" style="flex:1; padding:10px; background:#ccc; border:none; border-radius:6px; cursor:pointer;">Cancel</button>
+          </div>
+          <p id="upload-status" style="margin-top:10px; font-size:13px; color:green;"></p>
+        </div>
+      </div>
+
+      <nav class="category-menu">
+        <ul>
+          <li onclick="filterCategory('all')">All</li>
+          <li onclick="filterCategory('tops')">Tops</li>
+          <li onclick="filterCategory('pants')">Pants</li>
+          <li onclick="filterCategory('accessories')">Accessories</li>
+          <li onclick="filterCategory('shoes')">Shoes</li>
+          <li onclick="filterCategory('bags')">Bags</li>
+
+        </ul>
+      </nav>
+      <button onclick="openModal()" style="margin:12px 0; padding:8px 16px; background:#333; color:white; border:none; border-radius:6px; cursor:pointer;">+ Add Item</button>
+
+      <div class="closet">
+   
+        
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

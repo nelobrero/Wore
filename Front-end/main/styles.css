@@ -1,0 +1,235 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    height: 100vh;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+  }
+  
+  .box-left {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-right: 1px solid #ccc;
+  }
+
+  .outfit{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  #selected-item {
+    text-align: center;
+  }
+  
+  .selected-top{
+    height: 200px;
+    width: 250px;
+  }
+
+   .selected-belt {
+    height: 30px;
+  }
+
+  .selected-bottom {
+    height: 280px;
+    width: 250px;
+  }
+
+   .selected-shoes {
+    height: 100px;
+    width: 250px;
+  }
+  
+  .selected-top img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .selected-bottom img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .selected-belt img {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+    width: 50%;
+    height: 100%;
+    object-fit:cover;
+    border-radius: 8px;
+  }
+
+  .selected-shoes img {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+    width: 50%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  
+  /* SECONDARY */
+  
+  #selected-item-secondary{
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .selected-top-outer{
+    height: 200px;
+    width: 250px;
+  }
+
+   .selected-top-outer img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+   .selected-bag{
+    text-align: center;
+    height: 200px;
+    width: 250px;
+  }
+
+   .selected-bag img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .row{
+        justify-content: center;
+        align-items: center;
+    display: flex;
+    gap: 16px;
+  }
+
+  .container-accessories{
+    height: 100px;
+    width: 100px;
+  }
+
+  .container-accessories img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+.remove-btn1 {
+  display: none;
+  position: absolute;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 3px 6px;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.selected-top:hover .remove-btn1 {
+  display: block;
+}
+
+.selected-bottom:hover .remove-btn1 {
+  display: block;
+}
+  
+
+
+  /* button */
+  
+  .remove-btn {
+    padding: 8px 12px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .remove-btn:hover {
+    background-color: #e60000;
+  }
+  
+  /* ITEMS */
+  .box-right {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+  }
+  
+  .category-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+  }
+  
+  .category-menu li {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+  }
+  
+  .category-menu li:hover {
+    color: blue;
+  }
+  
+  .closet {
+    max-height: 50em;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 5px;
+  }
+  
+  .item {
+    flex: 1 1 calc(25% - 15px);
+    background: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .item img {
+    width: 140px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .item img:hover {
+    transform: scale(1.05);
+  }
+  
