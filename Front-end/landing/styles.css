@@ -19,10 +19,13 @@
   justify-content: center;
     font-family: "Jost", sans-serif;
     font-size: large;
+    padding-left: 0.3em;
 }
 
 .hero-center {
-  font-size: 3em;
+  font-size: 5em;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 
 .nav-signup {
@@ -32,7 +35,7 @@
   cursor: pointer;
 }
 
-.nav-signup:hover {
+.nav-signup:hover, .cell:hover {
   color: #ffffff; 
   background-color: #000000;
   transition: background-color 0.3s, color 0.3s;
