@@ -26,3 +26,15 @@
   font-style: normal;
 }
 
+.nav-signup {
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  cursor: pointer;
+}
+
+.nav-signup:hover {
+  color: #ffffff; 
+  background-color: #000000;
+  transition: background-color 0.3s, color 0.3s;
+}
