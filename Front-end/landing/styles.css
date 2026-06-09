@@ -17,13 +17,12 @@
   align-items: center;
   text-align: center;
   justify-content: center;
+    font-family: "Jost", sans-serif;
+    font-size: large;
 }
 
 .hero-center {
   font-size: 3em;
- font-family: "Jost", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
 }
 
 .nav-signup {
