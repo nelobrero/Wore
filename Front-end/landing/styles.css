@@ -18,3 +18,11 @@
   text-align: center;
   justify-content: center;
 }
+
+.hero-center {
+  font-size: 3em;
+ font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
