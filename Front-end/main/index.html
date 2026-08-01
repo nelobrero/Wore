@@ -3,15 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <title>Virtual Closet</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<button onclick="window.location.href='../landing/Landing.html'">Back to Landing Page</button>
+<div style="
+  display: flex;
+  justify-content: space-between;
+  align-items: center;">
+<button onclick="window.location.href='../landing/Landing.html'" style="margin:12px 0; padding:8px 16px; background:#D9D9D9; color:rgb(0, 0, 0); border: 1px solid #000000 ; cursor:pointer;">BACK</button>
+<button onclick="openModal()" style="margin:12px 0; padding:8px 16px; background:#D9D9D9; color:rgb(0, 0, 0); border: 1px solid #000000 ; cursor:pointer;">+ ADD NEW ITEM</button>
+</div>
   <div class="container">
     <!-- Left Box -->
     <div class="box-left">
-      <h2>Selected Outfit</h2>
 
       <div class="outfit">
 
@@ -97,20 +105,35 @@
 
       <nav class="category-menu">
         <ul>
-          <li onclick="filterCategory('all')">All</li>
-          <li onclick="filterCategory('tops')">Tops</li>
-          <li onclick="filterCategory('pants')">Pants</li>
-          <li onclick="filterCategory('accessories')">Accessories</li>
-          <li onclick="filterCategory('shoes')">Shoes</li>
-          <li onclick="filterCategory('bags')">Bags</li>
+          <li onclick="filterCategory('all')">ALL</li>
+          <li onclick="filterCategory('tops')">TOPS</li>
+          <li onclick="filterCategory('pants')">BOTTOMS</li>
+          <li onclick="filterCategory('accessories')">ACCESSORIES</li>
+          <li onclick="filterCategory('shoes')">SHOES</li>
+          <li onclick="filterCategory('bags')">BAGS</li>
 
         </ul>
       </nav>
-      <button onclick="openModal()" style="margin:12px 0; padding:8px 16px; background:#333; color:white; border:none; border-radius:6px; cursor:pointer;">+ Add Item</button>
 
       <div class="closet">
-   
-        
+        <!-- <div class="item tops">
+          <img src="https://placehold.co/100x100?text=Top" alt="Test Top">
+        </div>
+        <div class="item pants">
+          <img src="https://placehold.co/100x100?text=Pants" alt="Test Pants">
+        </div>
+        <div class="item shoes">
+          <img src="https://placehold.co/100x100?text=Shoes" alt="Test Shoes">
+        </div>
+        <div class="item belts">
+          <img src="https://placehold.co/100x100?text=Belt" alt="Test Belt">
+        </div>
+        <div class="item accessories">
+          <img src="https://placehold.co/100x100?text=Accessory" alt="Test Accessory">
+        </div>
+        <div class="item bags">
+          <img src="https://placehold.co/100x100?text=Bag" alt="Test Bag">
+        </div> -->
       </div>
     </div>
   </div>

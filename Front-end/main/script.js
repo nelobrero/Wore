@@ -92,43 +92,51 @@ closetImages.forEach(img => {
 
 
       if (topSlotEmpty){
-      topSlot.innerHTML = `<img src="${img.src}" alt="${img.alt}"><p>${img.alt}</p>
-      <button class="remove-btn1" onclick="removeSelection('top')">Remove</button>`;
+      topSlot.innerHTML = `<img src="${img.src}" alt="${img.alt}" onclick="toggleRemoveButton('.selected-top')">
+      <button class="remove-btn1" onclick="removeSelection('top')">Remove</button>`;  
+      // topSlot.innerHTML = `<img src="${img.src}" alt="${img.alt}"><p>${img.alt}</p>
+      // <button class="remove-btn1" onclick="removeSelection('top')">Remove</button>`;
       topCount++;
       } else if (topOuterSlotEmpty){
-        topOuterSlot.innerHTML = `<p></p><img src="${img.src}" alt="${img.alt}"><p>${img.alt}</p>`;
+        topOuterSlot.innerHTML = `<p></p><img src="${img.src}" alt="${img.alt}" onclick="toggleRemoveButton('.selected-top-outer')">
+         <button class="remove-btn1" onclick="removeSelection('top2')">Remove</button>`;
         topCount++;
       }
     }
 
     if (isBottom) {
       const bottomSlot = document.querySelector('.selected-bottom');
-      bottomSlot.innerHTML = `<img src="${img.src}" alt="${img.alt}"><p>${img.alt}</p>
-       <button class="remove-btn1" onclick="removeSelection('bottom')">Remove</button>`;
+      bottomSlot.innerHTML = `<img src="${img.src}" alt="${img.alt}" onclick="toggleRemoveButton('.selected-bottom')">
+      <button class="remove-btn1" onclick="removeSelection('bottom')">Remove</button>`;  
     }
 
     if (isShoes){
       const shoesSlot = document.querySelector('.selected-shoes');
-      shoesSlot.innerHTML = `<img src="${img.src}" alt="${img.alt}">`;
+      shoesSlot.innerHTML = `<img src="${img.src}" alt="${img.alt}" onclick="toggleRemoveButton('.selected-shoes')">
+      <button class="remove-btn1" onclick="removeSelection('shoes')">Remove</button>`;  
     }
 
      if (isBelt){
       const beltSlot = document.querySelector('.selected-belt');
-      beltSlot.innerHTML = `<img src="${img.src}" alt="${img.alt}">`;
+      beltSlot.innerHTML = `<img src="${img.src}" alt="${img.alt}" onclick="toggleRemoveButton('.selected-belt')">
+      <button class="remove-btn1" onclick="removeSelection('belt')">Remove</button>`;  
     }
 
     if (isAccessories) {
       const slots = document.querySelectorAll('.container-accessories');
       for (let i=0; i < slots.length; i++){
         if (!slots[i].querySelector('img')){
-          slots[i].innerHTML= `<img src="${img.src}" alt="${img.alt}">`;
+          slots[i].innerHTML= `<img src="${img.src}" alt="${img.alt}" onclick="toggleRemoveButtonByIndex(${i})">
+          <button class="remove-btn1" onclick="removeAccessory(${i})">Remove</button>`; 
           break;
         }
       }
     }
+    
     if (isBag){
       const bagSlot = document.querySelector('.selected-bag');
-      bagSlot.innerHTML = `<img src="${img.src}" alt="${img.alt}">
+      bagSlot.innerHTML = `<img src="${img.src}" alt="${img.alt}" onclick="toggleRemoveButton('.selected-bag')">
+      <button class="remove-btn1" onclick="removeSelection('bag')">Remove</button>
       `;
     }
   });
@@ -139,30 +147,35 @@ function removeSelection(part) {
   if (part === 'top') {
     const topSlot = document.querySelector('.selected-top');
     topSlot.innerHTML = ``;
+    topSlot.classList.remove('show-remove');
     topCount = Math.max(0, topCount - 1);
   }
   if (part === 'top2') {
     const topSlot = document.querySelector('.selected-top-outer');
     topSlot.innerHTML = ``;
-    
+    topSlot.classList.remove('show-remove');
     topCount = Math.max(1, topCount - 1);
   }
   if (part === 'bottom') {
     const bottomSlot = document.querySelector('.selected-bottom');
     bottomSlot.innerHTML = ``;
+    bottomSlot.classList.remove('show-remove');
   }
   if (part === 'shoes') {
     const shoesSlot = document.querySelector('.selected-shoes');
     shoesSlot.innerHTML = ``;
+    shoesSlot.classList.remove('show-remove');
   }
   if (part === 'belt') {
     const beltSlot = document.querySelector('.selected-belt');
     beltSlot.innerHTML = ``;
+    beltSlot.classList.remove('show-remove');
   }
   if (part === 'bag') {
     const bagSlot = document.querySelector('.selected-bag');
     bagSlot.innerHTML = `
     `;
+    bagSlot.classList.remove('show-remove');
   }
 }
 
@@ -170,6 +183,18 @@ function removeAccessory(index) {
   const slots = document.querySelectorAll('.container-accessories');
   if (slots[index]) {
     slots[index].innerHTML = "";
+    slots[index].classList.remove('show-remove');
     accessoryCount = Math.max(0, accessoryCount - 1);
   }
 }
+
+function toggleRemoveButtonByIndex(index) {
+  const slots = document.querySelectorAll('.container-accessories');
+  if (slots[index]) slots[index].classList.toggle('show-remove');
+}
+
+function toggleRemoveButton(slotSelector) {
+  const slot = document.querySelector(slotSelector);
+  if (slot) slot.classList.toggle('show-remove');
+}
+
